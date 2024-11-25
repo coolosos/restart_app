@@ -49,11 +49,15 @@ public class RestartAppPlugin: NSObject, FlutterPlugin {
                 print("Unable to find the application's window.")
                 return
             }
+            
+            let storyboard = UIStoryboard(name: "LaunchScreen", bundle: nil)
 
-            let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+            let initialViewController = storyboard.instantiateViewController(withIdentifier: "LaunchScreen")
+
+            // let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
 
             // Remove current rootViewController
-            window.rootViewController = launchScreen
+            window.rootViewController = initialViewController
 
             // Create a new FlutterEngine
             let newEngine = FlutterEngine(name: "io.flutter", project: nil)

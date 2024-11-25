@@ -50,8 +50,10 @@ public class RestartAppPlugin: NSObject, FlutterPlugin {
                 return
             }
 
+            let launchScreen = UIStoryboard(name: "LaunchScreen", bundle: nil).instantiateInitialViewController()
+
             // Remove current rootViewController
-            window.rootViewController = nil
+            window.rootViewController = launchScreen
 
             // Create a new FlutterEngine
             let newEngine = FlutterEngine(name: "io.flutter", project: nil)

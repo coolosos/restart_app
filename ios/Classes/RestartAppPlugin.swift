@@ -82,7 +82,7 @@ public class RestartAppPlugin: NSObject, FlutterPlugin {
 
             // Set the new rootViewController
             window.rootViewController = flutterViewController
-            window.makeKeyAndVisible()
+       
         }
     }
 }

@@ -58,6 +58,7 @@ public class RestartAppPlugin: NSObject, FlutterPlugin {
 
             // Remove current rootViewController
             window.rootViewController = initialViewController
+            window.makeKeyAndVisible()
 
             // Create a new FlutterEngine
             let newEngine = FlutterEngine(name: "io.flutter", project: nil)
